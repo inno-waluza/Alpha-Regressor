@@ -1,0 +1,42 @@
+<!-- home.html -->
+
+{% extends 'base.html' %}
+
+{% block title %}Home - House Price Prediction{% endblock %}
+
+{% block content %}
+<section class="form-section">
+    <h2>Enter House Details</h2>
+    <form method="post" action="{% url 'predict' %}">
+        {% csrf_token %}
+        <label for="longitude">Longitude:</label>
+        <input type="text" id="longitude" name="longitude" required><br><br>
+
+        <label for="latitude">Latitude:</label>
+        <input type="text" id="latitude" name="latitude" required><br><br>
+
+        <label for="housing_median_age">Housing Median Age:</label>
+        <input type="text" id="housing_median_age" name="housing_median_age" required><br><br>
+
+        <label for="total_rooms">Total Rooms:</label>
+        <input type="text" id="total_rooms" name="total_rooms" required><br><br>
+
+        <label for="total_bedrooms">Total Bedrooms:</label>
+        <input type="text" id="total_bedrooms" name="total_bedrooms" required><br><br>
+
+        <label for="population">Population:</label>
+        <input type="text" id="population" name="population" required><br><br>
+
+        <label for="households">Households:</label>
+        <input type="text" id="households" name="households" required><br><br>
+
+        <label for="median_income">Median Income:</label>
+        <input type="text" id="median_income" name="median_income" required><br><br>
+
+        <label for="ocean_proximity">Ocean Proximity:</label>
+        <input type="text" id="ocean_proximity" name="ocean_proximity" required><br><br>
+
+        <button type="submit">Predict Price</button>
+    </form>
+</section>
+{% endblock %}

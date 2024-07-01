@@ -1,0 +1,25 @@
+<!-- prediction.html -->
+
+{% extends 'base.html' %}
+
+{% block title %}Prediction Result{% endblock %}
+
+{% block content %}
+<section class="result-section">
+    <h2>Prediction Result</h2>
+    <p><strong>Longitude:</strong> {{ longitude }}</p>
+    <p><strong>Latitude:</strong> {{ latitude }}</p>
+    <p><strong>Housing Median Age:</strong> {{ housing_median_age }}</p>
+    <p><strong>Total Rooms:</strong> {{ total_rooms }}</p>
+    <p><strong>Total Bedrooms:</strong> {{ total_bedrooms }}</p>
+    <p><strong>Population:</strong> {{ population }}</p>
+    <p><strong>Households:</strong> {{ households }}</p>
+    <p><strong>Median Income:</strong> {{ median_income }}</p>
+    <p><strong>Ocean Proximity:</strong> {{ ocean_proximity }}</p>
+
+    <h3>Predicted House Price:</h3>
+    <p><strong>{{ predicted_price }}</strong></p>
+
+    <a href="{% url 'home' %}" class="btn">Go Back</a>
+</section>
+{% endblock %}
