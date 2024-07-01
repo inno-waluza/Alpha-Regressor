@@ -34,7 +34,13 @@
         <input type="text" id="median_income" name="median_income" required><br><br>
 
         <label for="ocean_proximity">Ocean Proximity:</label>
-        <input type="text" id="ocean_proximity" name="ocean_proximity" required><br><br>
+        <select id="ocean_proximity" name="ocean_proximity" required>
+            <option value="<1H OCEAN"><1H OCEAN</option>
+            <option value="INLAND">INLAND</option>
+            <option value="NEAR OCEAN">NEAR OCEAN</option>
+            <option value="NEAR BAY">NEAR BAY</option>
+            <option value="ISLAND">ISLAND</option>
+        </select><br><br>
 
         <button type="submit">Predict Price</button>
     </form>
