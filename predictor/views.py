@@ -1,12 +1,16 @@
 from django.views.generic import TemplateView
 from django.shortcuts import render
-from .forms import HouseForm 
+from .forms import HouseForm
 
 class home_page(TemplateView):
     template_name = 'home.html'
 
-class  predict_page(TemplateView):
+class predict_page(TemplateView):
     template_name = 'prediction.html'
+
+    def get(self, request, *args, **kwargs):
+        form = HouseForm()
+        return render(request, self.template_name, {'form': form})
 
     def post(self, request, *args, **kwargs):
         form = HouseForm(request.POST)
@@ -23,8 +27,13 @@ class  predict_page(TemplateView):
             ocean_proximity = form.cleaned_data['ocean_proximity']
 
             """
-            Some computations will be here
+            Perform any additional computations or predictions here
             """
+
+            # Assuming you have a function to predict house price
+            #predicted_price = predict_house_price(longitude, latitude, housing_median_age, total_rooms, total_bedrooms, population, households, median_income, ocean_proximity)
+
+            # Render the prediction result page with data
             return render(request, 'prediction.html', {
                 'longitude': longitude,
                 'latitude': latitude,
@@ -34,7 +43,8 @@ class  predict_page(TemplateView):
                 'population': population,
                 'households': households,
                 'median_income': median_income,
-                'ocean_proximity': ocean_proximity
+                'ocean_proximity': ocean_proximity,
             })
-
-        return render(request, 'prediction.html', {'form': form})  # Render the form with errors if form is not valid
+        else:
+            # If form is not valid, render the prediction page with the form and errors
+            return render(request, 'prediction.html', {'form': form})

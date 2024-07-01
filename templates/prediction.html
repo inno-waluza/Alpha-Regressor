@@ -6,6 +6,19 @@
 
 {% block content %}
 <section class="result-section">
+    {% if errors %}
+    <div class="alert alert-danger">
+        <strong>Error:</strong> Invalid data entered. Please correct the following errors:
+        <ul>
+            {% for field, error_list in errors.items %}
+                {% for error in error_list %}
+                    <li>{{ field|title }}: {{ error }}</li>
+                {% endfor %}
+            {% endfor %}
+        </ul>
+    </div>
+    {% endif %}
+
     <h2>Prediction Result</h2>
     <p><strong>Longitude:</strong> {{ longitude }}</p>
     <p><strong>Latitude:</strong> {{ latitude }}</p>
@@ -17,8 +30,10 @@
     <p><strong>Median Income:</strong> {{ median_income }}</p>
     <p><strong>Ocean Proximity:</strong> {{ ocean_proximity }}</p>
 
+    {% if predicted_price %}
     <h3>Predicted House Price:</h3>
     <p><strong>{{ predicted_price }}</strong></p>
+    {% endif %}
 
     <a href="{% url 'home' %}" class="btn">Go Back</a>
 </section>
