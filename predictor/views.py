@@ -1,6 +1,8 @@
 from django.views.generic import TemplateView
 from django.shortcuts import render
+##import pandas as pd
 from .forms import HouseForm
+from .utils.model_loader import load_model_and_pipeline
 
 class home_page(TemplateView):
     template_name = 'home.html'
@@ -26,12 +28,23 @@ class predict_page(TemplateView):
             median_income = form.cleaned_data['median_income']
             ocean_proximity = form.cleaned_data['ocean_proximity']
 
-            """
-            Perform any additional computations or predictions here
-            """
+            # Load the model and pipeline
+            model, pipeline = load_model_and_pipeline()
 
-            # Assuming you have a function to predict house price
-            #predicted_price = predict_house_price(longitude, latitude, housing_median_age, total_rooms, total_bedrooms, population, households, median_income, ocean_proximity)
+            # Prepare the data for prediction
+            input_data = pd.DataFrame([[
+                longitude, latitude, housing_median_age, total_rooms,
+                total_bedrooms, population, households, median_income, ocean_proximity
+            ]], columns=[
+                'longitude', 'latitude', 'housing_median_age', 'total_rooms',
+                'total_bedrooms', 'population', 'households', 'median_income', 'ocean_proximity'
+            ])
+
+            # Transform the data using the pipeline
+            transformed_data = pipeline.transform(input_data)
+
+            # Make the prediction
+            predicted_price = model.predict(transformed_data)[0]
 
             # Render the prediction result page with data
             return render(request, 'prediction.html', {
@@ -44,7 +57,8 @@ class predict_page(TemplateView):
                 'households': households,
                 'median_income': median_income,
                 'ocean_proximity': ocean_proximity,
+                'predicted_price': predicted_price
             })
         else:
             # If form is not valid, render the prediction page with the form and errors
-            return render(request, 'prediction.html', {'form': form})
+            return render(request, 'prediction.html', {'form': form, 'errors': form.errors})
