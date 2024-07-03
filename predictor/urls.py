@@ -1,9 +1,8 @@
-# predictor/urls.py
-
+# urls.py
 from django.urls import path
-from .views import home_page, predict_page
+from .views import HomePageView, PredictPageView
 
 urlpatterns = [
-    path('', home_page.as_view(), name='home'),  # Set a name for the URL pattern
-     path('predict/', predict_page.as_view(), name='predict'),
+    path('', HomePageView.as_view(), name='home'),
+    path('predict/', PredictPageView.as_view(), name='predict'),
 ]
