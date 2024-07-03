@@ -20,22 +20,29 @@ class HouseForm(forms.Form):
     median_income = forms.FloatField(label='Median Income', required=True)
     ocean_proximity = forms.ChoiceField(label='Ocean Proximity', choices=OCEAN_PROXIMITY_CHOICES, required=True)
 
+    #input data validation
     def clean(self):
         cleaned_data = super().clean()
 
         longitude = cleaned_data.get('longitude')
         latitude = cleaned_data.get('latitude')
-        """
+        median_income = cleaned_data.get('median_income')
+        total_bedrooms = cleaned_data.get('total_bedrooms')
         housing_median_age = cleaned_data.get('housing_median_age')
         total_rooms = cleaned_data.get('total_rooms')
-        total_bedrooms = cleaned_data.get('total_bedrooms')
-        median_income = cleaned_data.get('median_income')
-        """
 
         if longitude < -180 or longitude > 180:
             self.add_error('longitude', 'Longitude must be between -180 qnd 180')
-
         if latitude < -90 or latitude > 90:
             self.add_error('latitude', 'Latitude must be between -90 and 90')
-
+        if median_income < 10 :
+            self.add_error('median_income', 'Median income must atlest be 10')
+        if total_bedrooms < 1 :
+            self.add_error('total_bedrooms', 'Number of bedrooms must atleast be 1')
+        if housing_median_age < 1:
+            self.add_error('housing_median_age', "Housing median age can't be 0")
+        if total_rooms < total_bedrooms :
+            self.add_error('total_rooms', "Total rooms can't be less than total bedrooms")
+        if total_rooms < 1:
+            self.add_error('total_rooms', "Total rooms should atlest be 1")
         return cleaned_data

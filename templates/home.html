@@ -1,48 +1,65 @@
-<!-- home.html -->
-
 {% extends 'base.html' %}
 
 {% block title %}Home - House Price Prediction{% endblock %}
 
 {% block content %}
+<section class="description">
+    <p>
+        Welcome to House Price Prediction tool! Leveraging the power of artificial intelligence, this predictor estimates house prices based on location, ocean proximity, population density, median income, and median age. The model, crafted using the techniques outlined in Aurélien Géron's "Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow" (Second Edition), specifically Chapter 2, utilizes data from the 1990 California census and employs a state-of-the-art RandomForestRegressor. Please note, this project is for demonstration purposes only.
+    </p>
+</section>
+
 <section class="form-section">
     <h2>Enter House Details</h2>
     <form method="post" action="{% url 'predict' %}">
         {% csrf_token %}
-        <label for="longitude">Longitude:</label>
-        <input type="text" id="longitude" name="longitude" required><br><br>
-
-        <label for="latitude">Latitude:</label>
-        <input type="text" id="latitude" name="latitude" required><br><br>
-
-        <label for="housing_median_age">Housing Median Age:</label>
-        <input type="text" id="housing_median_age" name="housing_median_age" required><br><br>
-
-        <label for="total_rooms">Total Rooms:</label>
-        <input type="text" id="total_rooms" name="total_rooms" required><br><br>
-
-        <label for="total_bedrooms">Total Bedrooms:</label>
-        <input type="text" id="total_bedrooms" name="total_bedrooms" required><br><br>
-
-        <label for="population">Population:</label>
-        <input type="text" id="population" name="population" required><br><br>
-
-        <label for="households">Households:</label>
-        <input type="text" id="households" name="households" required><br><br>
-
-        <label for="median_income">Median Income:</label>
-        <input type="text" id="median_income" name="median_income" required><br><br>
-
-        <label for="ocean_proximity">Ocean Proximity:</label>
-        <select id="ocean_proximity" name="ocean_proximity" required>
-            <option value="<1H OCEAN"><1H OCEAN</option>
-            <option value="INLAND">INLAND</option>
-            <option value="NEAR OCEAN">NEAR OCEAN</option>
-            <option value="NEAR BAY">NEAR BAY</option>
-            <option value="ISLAND">ISLAND</option>
-        </select><br><br>
-
-        <button type="submit">Predict Price</button>
+        <fieldset>
+            <div>
+                <label for="longitude">Longitude:</label>
+                <input type="text" id="longitude" name="longitude" required>
+            </div>
+            <div>
+                <label for="latitude">Latitude:</label>
+                <input type="text" id="latitude" name="latitude" required>
+            </div>
+            <div>
+                <label for="housing_median_age">Housing Median Age:</label>
+                <input type="text" id="housing_median_age" name="housing_median_age" required>
+            </div>
+            <div>
+                <label for="total_rooms">Total Rooms:</label>
+                <input type="text" id="total_rooms" name="total_rooms" required>
+            </div>
+            <div>
+                <label for="total_bedrooms">Total Bedrooms:</label>
+                <input type="text" id="total_bedrooms" name="total_bedrooms" required>
+            </div>
+            <div>
+                <label for="population">Population:</label>
+                <input type="text" id="population" name="population" required>
+            </div>
+            <div>
+                <label for="households">Households:</label>
+                <input type="text" id="households" name="households" required>
+            </div>
+            <div>
+                <label for="median_income">Median Income:</label>
+                <input type="text" id="median_income" name="median_income" required>
+            </div>
+            <div>
+                <label for="ocean_proximity">Ocean Proximity:</label>
+                <select id="ocean_proximity" name="ocean_proximity" required>
+                    <option value="<1H OCEAN"><1H OCEAN</option>
+                    <option value="INLAND">INLAND</option>
+                    <option value="NEAR OCEAN">NEAR OCEAN</option>
+                    <option value="NEAR BAY">NEAR BAY</option>
+                    <option value="ISLAND">ISLAND</option>
+                </select>
+            </div>
+            <div>
+                <button type="submit">Predict Price</button>
+            </div>
+        </fieldset>
     </form>
 </section>
 {% endblock %}
