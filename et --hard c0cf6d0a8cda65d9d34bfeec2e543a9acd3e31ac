@@ -1,0 +1,66 @@
+[33mcommit 1f082b3c06f17b157e476b8e7b01a44800344fda[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmaster[m[33m)[m
+Merge: c0cf6d0 b1737a8
+Author: inno-waluza <innowaluza@gmail.com>
+Date:   Fri Jul 5 00:22:30 2024 -0800
+
+    Merge branch 'master' of https://github.com/inno-waluza/Alpha-Regressor
+
+[33mcommit c0cf6d0a8cda65d9d34bfeec2e543a9acd3e31ac[m
+Author: inno-waluza <innowaluza@gmail.com>
+Date:   Fri Jul 5 00:14:38 2024 -0800
+
+    Reverted to commit: added description and about page
+
+[33mcommit b1737a8af573fe13b04f7cc6bc3d65f9b6470f0d[m[33m ([m[1;31morigin/master[m[33m)[m
+Author: inno-waluza <innowaluza@gmail.com>
+Date:   Thu Jul 4 23:43:48 2024 -0800
+
+    initial commit
+
+[33mcommit d14ff1f37cca22466ed1f8d745cf61327f179d08[m
+Author: inno-waluza <innowaluza@gmail.com>
+Date:   Thu Jul 4 23:15:55 2024 -0800
+
+    initial commit
+
+[33mcommit 8cf35530dedcdecc97cd36a867ecef5f1530bf0f[m
+Author: inno-waluza <innowaluza@gmail.com>
+Date:   Tue Jul 2 23:04:10 2024 -0800
+
+    added description and about page
+
+[33mcommit aa326a271ca8468700e38797270cbfbe029d7e68[m
+Author: inno-waluza <innowaluza@gmail.com>
+Date:   Tue Jul 2 21:00:31 2024 -0800
+
+    loaded models
+
+[33mcommit 29fd5beb159e7547285075792d765c9a7edfec8f[m
+Author: inno-waluza <innowaluza@gmail.com>
+Date:   Mon Jul 1 23:15:29 2024 -0800
+
+    loaded a model
+
+[33mcommit 36fb974f54fd6dd1d2c817e1deee2b8301d6c8a3[m
+Author: inno-waluza <innowaluza@gmail.com>
+Date:   Sun Jun 30 23:35:20 2024 -0800
+
+    validation
+
+[33mcommit e1cbb416ac511d651bc8e6fd60a7a22b64619a41[m
+Author: inno-waluza <innowaluza@gmail.com>
+Date:   Sun Jun 30 23:17:22 2024 -0800
+
+    validation
+
+[33mcommit 04661eba9c640bfcf6069e6d3e0145c6e2aa7bf2[m
+Author: inno-waluza <innowaluza@gmail.com>
+Date:   Sun Jun 30 22:39:21 2024 -0800
+
+    footer and dropdown button
+
+[33mcommit de8171686de2b09f317dfd42f9d259d984f9fba1[m
+Author: inno-waluza <innowaluza@gmail.com>
+Date:   Sun Jun 30 21:39:05 2024 -0800
+
+    inittial commit
