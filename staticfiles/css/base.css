@@ -1,0 +1,145 @@
+/* base.css */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: white;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+nav ul {
+    list-style-type: none;
+    margin-top: 1rem;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 1rem;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+main {
+    padding: 2rem;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-section {
+    margin-bottom: 2rem;
+    align-items: center;
+}
+
+form label {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+form input[type="text"],
+form select,
+form button {
+    width: calc(100% - 20px);
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+form select {
+    /* Specific styles for dropdown */
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-color: white;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23000000'%3E%3Cpath d='M7 10l5 5 5-5H7z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 8px center;
+}
+
+form button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #0056b3;
+}
+
+.result-section {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+.result-section h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.result-section p {
+    margin: 10px 0;
+    font-size: 16px;
+}
+
+.result-section h3 {
+    margin-top: 20px;
+    color: #333;
+}
+
+.result-section .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.result-section .btn:hover {
+    background-color: #0056b3;
+}
+
+footer {
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    background-color: #333;
+    color: #fff;
+    padding: 1rem; 
+}
