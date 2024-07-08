@@ -33,7 +33,7 @@ This project is a Django-based web application for predicting house prices using
 ![Screenshot of the home page](/assets/Screenshot_1.png)
 
 ### Prediction Page
-![Screenshot of the prediction page](/assets/screenshot_2.png)
+![Screenshot of the prediction page](/assets/Screenshot_2.png)
 
 ## About This Project
 This House Price Prediction tool is an advanced machine learning project designed to estimate house prices based on various factors. Developed as a demonstration project, it incorporates the following key features:
