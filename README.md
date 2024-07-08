@@ -27,6 +27,14 @@ This project is a Django-based web application for predicting house prices using
 - Deploy the application on a cloud platform.
 - Use Docker for containerized deployment.
 
+## Screenshots
+
+### Home Page
+![Screenshot of the home page](assets/screenshot_1.png)
+
+### Prediction Page
+![Screenshot of the prediction page](assets/screenshot_2.png)
+
 ## About This Project
 This House Price Prediction tool is an advanced machine learning project designed to estimate house prices based on various factors. Developed as a demonstration project, it incorporates the following key features:
 
