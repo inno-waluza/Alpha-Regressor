@@ -90,10 +90,11 @@ STATICFILES_DIRS = [BASE_DIR / "static"]
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# CORS settings (optional, if your app needs to accept requests from other domains)
+"""CORS settings (optional, if your app needs to accept requests from other domains)
 CORS_ALLOWED_ORIGINS = [
     'https://alpha-regressor.onrender.com',
 ]
 
 
 CORS_ALLOW_ALL_ORIGINS = True
+"""
