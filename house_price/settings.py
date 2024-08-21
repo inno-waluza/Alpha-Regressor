@@ -1,14 +1,15 @@
-# settings.py
-
 from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = 'django-insecure-%503mmo=%a+yj#g@wy2aw4jn((e8baxhf=wqt5&%-jjq25w3c@'
 
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
+
+# CSRF Trusted Origins
+CSRF_TRUSTED_ORIGINS = ['https://alpha-regressor.onrender.com']
 
 INSTALLED_APPS = [
     'predictor',
@@ -18,11 +19,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'corsheaders',  # Add this if using django-cors-headers for CORS
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',  # Add this if using django-cors-headers
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -81,14 +84,16 @@ USE_I18N = True
 USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
-
-# https://docs.djangoproject.com/en/dev/ref/settings/#static-root
 STATIC_ROOT = BASE_DIR / "staticfiles"
-
-# https://docs.djangoproject.com/en/dev/ref/settings/#static-url
 STATIC_URL = '/static/'
-
-# https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/#std:setting-STATICFILES_DIRS
 STATICFILES_DIRS = [BASE_DIR / "static"]
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# CORS settings (optional, if your app needs to accept requests from other domains)
+CORS_ALLOWED_ORIGINS = [
+    'https://alpha-regressor.onrender.com',
+]
+
+
+CORS_ALLOW_ALL_ORIGINS = True
